@@ -28,6 +28,9 @@ eval "`dircolors`"
 alias ll='ls $LS_OPTIONS -lah'
 alias ls='ls --color=auto'
 
+# Custom aliases
+alias reconnect-screen='screen -dRU'
+
 # Maybe load host specific configs
 if [ -f ~/.bashrc.host ]; then
 	. ~/.bashrc.host
