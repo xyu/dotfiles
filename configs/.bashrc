@@ -27,3 +27,8 @@ export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 alias ll='ls $LS_OPTIONS -lah'
 alias ls='ls --color=auto'
+
+# Maybe load host specific configs
+if [ -f ~/.bashrc.host ]; then
+	. ~/.bashrc.host
+fi
