@@ -15,6 +15,10 @@ HOST=$( hostname )
 # Util functions
 #
 backup_config() {
+	# Remove symlinks to nowhere
+	[ -L ~/.bashrc -a ! -f ~/.bashrc ] && rm "$HOME/$2"
+
+	# Backup files and dirs
 	[ -f "$HOME/$2" -o -d "$HOME/$2" ] && mv -f "$HOME/$2" "$DIR/backups/$2"
 }
 
