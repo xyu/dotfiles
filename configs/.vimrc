@@ -1,4 +1,4 @@
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " Make sure syntax coloring is on and we are highlighting searches
 syntax enable
