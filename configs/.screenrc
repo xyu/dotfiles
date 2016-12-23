@@ -332,7 +332,7 @@
 # patterns: host, load, time, date.
 # the "%=" at the end extends the current color unto the end of the line.
 #####  hardstatus alwayslastline "%{= RY}%H %{BW}%l %{KW}%c %M%d%="
-hardstatus alwayslastline "%{b kw}%H | %{g}%Y-%m-%d %{w}| %{y}%c %{w}| %{g}%l %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
+hardstatus alwayslastline "%{b kw}%H | %{g}%Y-%m-%d %{y}%c %{w}| %{g}%l %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
 #
 # Eisenstadt
 # hardstatus alwayslastline "%{Gb}Linuxwochen Eisenstadt  %M%d %c %="
