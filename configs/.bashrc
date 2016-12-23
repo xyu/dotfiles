@@ -4,24 +4,48 @@
 [ -z "$PS1" ] && return
 shopt -s checkwinsize
 
+# UTF-8
+export LANG=en_US.utf8
+
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
-    alias ll='ls --format=vertical --color=auto -lah'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
+	eval "`dircolors -b`"
+	alias ll='ls --format=vertical --color=auto -lah'
+	#alias dir='ls --color=auto --format=vertical'
+	#alias vdir='ls --color=auto --format=long'
 fi
+
+# Build a better prompt
+__XYU_PROMPT_COMMAND() {
+	local EXIT="$?"
+
+	local CRST='\[\e[0m\]'
+	local CRED='\[\e[0;31m\]'
+	local CGRN='\[\e[0;32m\]'
+	local CYEL='\[\e[1;33m\]'
+	local CBLU='\[\e[1;34m\]'
+	local CBRO='\[\e[0;35m\]'
+
+	PS1="${CBRO}\u${CRST}@${CYEL}\h${CRST}:${CBLU}\W "
+
+	if [ $EXIT != 0 ]; then
+		PS1+="${CRED}❯ ${CRST}"
+	else
+		PS1+="${CGRN}❯ ${CRST}"
+	fi
+}
 case "$TERM" in
 xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-    ;;
+	PROMPT_COMMAND=__XYU_PROMPT_COMMAND
+	;;
 *)
-    ;;
+	;;
 esac
-export PS1='\[\033[01;33m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+true && __XYU_PROMPT_COMMAND && export PS1
+
+# Set path and umask
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 umask 022
-
 
 export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
