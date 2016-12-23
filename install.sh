@@ -30,6 +30,7 @@ install_config_dir() {
 	# Link all that we have from checked in configs
 	for DOTFILE in $( ls -A "$1" )
 	do
+		echo "    $DOTFILE"
 		backup_config "$1" "$DOTFILE"
 		link_config "$1" "$DOTFILE"
 	done
@@ -44,8 +45,13 @@ mkdir -p "$DIR/backups"
 rm -rf "$DIR/backups/*"
 
 # Link all that we have from checked in configs (global)
+echo "Symlinking global configs"
 install_config_dir "$DIR/configs"
 
 # Link from host override configs
-[ -d "$DIR/configs-host/$HOST" ] && install_config_dir "$DIR/configs-host/$HOST"
+if [ -d "$DIR/configs-host/$HOST" ]
+then
+	echo "Symlinking configs for '$HOST'"
+	install_config_dir "$DIR/configs-host/$HOST"
+fi
 
