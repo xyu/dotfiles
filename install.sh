@@ -16,14 +16,14 @@ HOST=$( hostname )
 #
 backup_config() {
 	# Remove symlinks to nowhere
-	[ -L ~/.bashrc -a ! -f ~/.bashrc ] && rm "$HOME/$2"
+	[ -L "$HOME/$2" -a ! -f "$HOME/$2" ] && rm "$HOME/$2"
 
 	# Backup files and dirs
 	[ -f "$HOME/$2" -o -d "$HOME/$2" ] && mv -f "$HOME/$2" "$DIR/backups/$2"
 }
 
 link_config() {
-    ln -s "$1/$2" "$HOME/$2"
+	ln -s "$1/$2" "$HOME/$2"
 }
 
 install_config_dir() {
