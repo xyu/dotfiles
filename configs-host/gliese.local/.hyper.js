@@ -77,12 +77,15 @@ module.exports = {
     bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: true
+    copyOnSelect: true,
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+    themeSettings: {
+      opacity: 0.6
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -94,12 +97,9 @@ module.exports = {
   plugins: [
     // Themes
     // 'hyper-solarized-dark'
+    'hyperline',
     'an-old-hype'
   ],
-
-  themeSettings: {
-    opacity: 0.95
-  },
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
