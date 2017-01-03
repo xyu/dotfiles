@@ -115,9 +115,9 @@
 # screen -t GOOGLE      2 links http://www.google.com
 # screen -t NEWS        3 slrn
 # screen -t WWW         4 links http://www.guckes.net/
-# screen -t WPSH        0 wpsh
-# screen -t ERRORS      1 tail -f /tmp/php-errors
-# screen -t BASH        2
+# screen -t WPSH        0 /home/wpcom/public_html/bin/wpsh
+# screen -t ERRORS      1 tail -F /tmp/php-errors
+# screen -t WPCOM       2
 #
 # ===============================================================
 # VARIABLES - Boolean values (on/off) aka Switches aka Toggles
