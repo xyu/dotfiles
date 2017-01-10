@@ -10,7 +10,7 @@ alias impalacli-bizint="    impala-shell -i node-B16-R31-05.hadoop.dfw.wordpress
 alias impalacli="           impala-shell -i node-A16-R14-21.hadoop.dfw.wordpress.com --live_summary --live_progress"
 
 # HDFS
-alias dfs-nosara1="         hdfs dfs -fs hdfs://node-A16-R43-01.hadoop.dfw.wordpress.com/"
-alias dfs-bizint="          hdfs dfs -fs hdfs://node-B16-R31-01.hadoop.dfw.wordpress.com/"
-alias dfs="                 hdfs dfs -fs hdfs://node-B16-R31-11.hadoop.dfw.wordpress.com/"
+alias dfs-nosara1="         hdfs dfs -fs 'hdfs://node-A16-R39-01.hadoop.dfw.wordpress.com/'"
+alias dfs-bizint="          hdfs dfs -fs 'hdfs://node-B16-R31-01.hadoop.dfw.wordpress.com/'"
+alias dfs="                 hdfs dfs -fs 'hdfs://node-B16-R31-11.hadoop.dfw.wordpress.com/'"
 
