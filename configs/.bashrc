@@ -35,7 +35,7 @@ __XYU_PROMPT_COMMAND() {
 	fi
 }
 case "$TERM" in
-xterm*|rxvt*)
+xterm*|rxvt*|screen*)
 	PROMPT_COMMAND=__XYU_PROMPT_COMMAND
 	;;
 *)
